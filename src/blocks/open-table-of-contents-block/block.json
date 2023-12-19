@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "open-table-of-contents/table-of-contents",
+	"version": "0.1.0",
+	"title": "Open Table of Contents",
+	"keywords": ["table of contents", "toc", "open toc", "index"],
+	"category": "widgets",
+	"icon": "info-outline",
+	"description": "🗂️ The open source plugin for Wordpress to insert Table of Contents into your posts and pages.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "Table of Contents"
+		}
+	},
+	"textdomain": "open-table-of-contents",
+	"render": "file:./render.php",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

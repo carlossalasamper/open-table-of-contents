@@ -1,0 +1,21 @@
+{
+	"name": "open-table-of-contents",
+	"version": "0.1.0",
+	"description": "🗂️ The open source plugin for Wordpress to insert Table of Contents into your posts and pages.",
+	"author": "Carlos Sala Samper",
+	"license": "MIT",
+	"scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start",
+		"so:install-dependencies": "./scripts/install-dependencies.sh",
+		"so:zip": "npm run build && ./scripts/zip.sh"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^26.19.0"
+	}
+}
