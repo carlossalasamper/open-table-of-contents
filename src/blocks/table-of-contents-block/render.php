@@ -3,9 +3,15 @@
 ?>
 
 <div <?php echo get_block_wrapper_attributes(); ?>>
-    <?php if ($attributes['title']) { ?>
-        <p class="open-table-of-contents-title"><?php echo $attributes['title']; ?></p>
-    <?php } ?>
+    <?php
+    $headingsTree = get_headings_tree($attributes['minHeadingLevel'], $attributes['maxHeadingLevel']);
 
-    <?php echo render_headings(get_headings_from_content()); ?>
+    if ($attributes['title']) { 
+    ?>
+        <p class="open-table-of-contents-title"><?php echo $attributes['title']; ?></p>
+    <?php
+    }
+
+    echo render_headings($headingsTree);
+    ?>
 </div>

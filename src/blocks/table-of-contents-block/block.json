@@ -16,9 +16,19 @@
 		"title": {
 			"type": "string",
 			"default": "Table of Contents"
+		},
+		"minHeadingLevel": {
+			"type": "integer",
+			"default": 2,
+			"enum": [2, 3, 4, 5, 6]
+		},
+		"maxHeadingLevel": {
+			"type": "integer",
+			"default": 6,
+			"enum": [2, 3, 4, 5, 6]
 		}
 	},
-	"textdomain": "open-table-of-contents",
+	"textdomain": "open-table-of-contents-table-of-contents",
 	"render": "file:./render.php",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",

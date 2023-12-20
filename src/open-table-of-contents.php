@@ -30,6 +30,6 @@ define('OPEN_TABLE_OF_CONTENTS_ROOT', __DIR__);
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function open_table_of_contents_open_table_of_contents_block_init() {
-    register_block_type( __DIR__ . '/blocks/open-table-of-contents-block');
+    register_block_type( __DIR__ . '/blocks/table-of-contents-block');
 }
 add_action( 'init', 'open_table_of_contents_open_table_of_contents_block_init' );

@@ -5,14 +5,9 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-open-table-of-contents {
-	$nestMargin: 1rem;
-
-	ul ul {
-		margin-left: $nestMargin;
-	}
-
+.wp-block-open-table-of-contents-table-of-contents {
 	.open-table-of-contents-title {
-		margin-bottom: 16px;
+		font-size: 2rem;
+		margin-bottom: 0px;
 	}
 }
