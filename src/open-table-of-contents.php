@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Open Table Of Contents
- * Description:       🗂️ The open source plugin for Wordpress to insert Table of Contents into your posts and pages.
+ * Description:       🗂️ The open source WordPress plugin to insert Table of Contents into your posts and pages.
  * Requires at least: 6.1
  * Requires PHP:      7.0
  * Version:           0.1.0

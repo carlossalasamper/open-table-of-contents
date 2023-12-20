@@ -1,7 +1,7 @@
 {
 	"name": "open-table-of-contents",
 	"version": "0.1.0",
-	"description": "🗂️ The open source plugin for Wordpress to insert Table of Contents into your posts and pages.",
+	"description": "🗂️ The open source WordPress plugin to insert Table of Contents into your posts and pages.",
 	"author": "Carlos Sala Samper",
 	"license": "MIT",
 	"scripts": {

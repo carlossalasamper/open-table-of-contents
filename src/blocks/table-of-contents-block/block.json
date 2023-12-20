@@ -7,7 +7,7 @@
 	"keywords": ["table of contents", "toc", "open toc", "index"],
 	"category": "widgets",
 	"icon": "info-outline",
-	"description": "🗂️ The open source plugin for Wordpress to insert Table of Contents into your posts and pages.",
+	"description": "🔎 SEO friendly Table of Contents block for WordPress posts and pages.",
 	"example": {},
 	"supports": {
 		"html": false

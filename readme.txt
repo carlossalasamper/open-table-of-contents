@@ -1,12 +1,12 @@
 === Open Table Of Contents ===
-Contributors:      The WordPress Contributors
-Tags:              block
+Contributors:      Carlos Sala Samper
+Tags:              table of contents, toc, indexes, seo, navigation, links, index
 Tested up to:      6.1
 Stable tag:        0.1.0
 License:           MIT
 License URI:       https://opensource.org/license/mit/
 
-🗂️ The open source plugin for Wordpress to insert Table of Contents into your posts and pages.
+🗂️ The open source WordPress plugin to insert Table of Contents into your posts and pages.
 
 == Description ==
 
