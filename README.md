@@ -20,10 +20,6 @@ npm run format
 ```
 
 ```bash
-npm run lint:css
-```
-
-```bash
 npm run lint:js
 ```
 

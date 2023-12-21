@@ -1,6 +1,8 @@
 import { useBlockProps } from "@wordpress/block-editor";
+import { BlockEditProps } from "@wordpress/blocks";
 import { TextControl } from "@wordpress/components";
 import "./editor.scss";
+import { TableOfContentsBlockAttributes } from "./types";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -10,12 +12,15 @@ import "./editor.scss";
  *
  * @return {Element} Element to render.
  */
-export default function Edit({ attributes, setAttributes }) {
+export default function Edit({
+	attributes,
+	setAttributes,
+}: BlockEditProps<TableOfContentsBlockAttributes>) {
 	const MIN_HEADING_LEVEL = 2;
 	const MAX_HEADING_LEVEL = 6;
 	const props = useBlockProps();
 	const { minHeadingLevel, maxHeadingLevel, title } = attributes;
-	const onMinHeadingLevelChanged = (minHeadingLevel) => {
+	const onMinHeadingLevelChanged = (minHeadingLevel: string) => {
 		const level = minHeadingLevel
 			? parseInt(minHeadingLevel)
 			: MIN_HEADING_LEVEL;
@@ -27,7 +32,7 @@ export default function Edit({ attributes, setAttributes }) {
 			),
 		});
 	};
-	const onMaxHeadingLevelChanged = (maxHeadingLevel) => {
+	const onMaxHeadingLevelChanged = (maxHeadingLevel: string) => {
 		const level = maxHeadingLevel
 			? parseInt(maxHeadingLevel)
 			: MAX_HEADING_LEVEL;
@@ -39,7 +44,7 @@ export default function Edit({ attributes, setAttributes }) {
 			),
 		});
 	};
-	const onTitleChanged = (title) => {
+	const onTitleChanged = (title: string) => {
 		setAttributes({ title });
 	};
 

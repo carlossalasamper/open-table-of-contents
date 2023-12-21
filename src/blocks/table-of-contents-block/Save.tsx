@@ -9,7 +9,7 @@ import { useBlockProps } from "@wordpress/block-editor";
  *
  * @return {Element} Element to render.
  */
-export default function save() {
+export default function Save() {
 	return (
 		<div {...useBlockProps.save()} className="open-table-of-contents">
 			⚠️ Open Table of Contents rendered on the client side

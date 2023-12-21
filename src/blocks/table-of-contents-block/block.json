@@ -4,7 +4,7 @@
 	"name": "open-table-of-contents/table-of-contents",
 	"version": "0.1.0",
 	"title": "Open Table of Contents",
-	"keywords": ["table of contents", "toc", "open toc", "index"],
+	"keywords": ["table of contents", "toc", "open toc", "index", "seo"],
 	"category": "widgets",
 	"icon": "info-outline",
 	"description": "🔎 SEO friendly Table of Contents block for WordPress posts and pages.",
