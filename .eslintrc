@@ -1,0 +1,4 @@
+{
+	"extends": ["@carlossalasamper/eslint-config"],
+	"ignorePatterns": ["commitlint.config.js", "scripts/zip.js"]
+}

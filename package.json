@@ -5,16 +5,20 @@
 	"author": "Carlos Sala Samper",
 	"license": "MIT",
 	"scripts": {
+		"prepare": "husky install",
 		"build": "wp-scripts build",
 		"format": "wp-scripts format",
-		"lint:css": "wp-scripts lint-style",
-		"lint:js": "wp-scripts lint-js",
+		"lint:js": "wp-scripts lint-js --fix",
 		"packages-update": "wp-scripts packages-update",
 		"start": "wp-scripts start",
-		"so:install-dependencies": "./scripts/install-dependencies.sh",
-		"so:zip": "npm run build && ./scripts/zip.sh"
+		"zip": "node ./scripts/zip.js"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^26.19.0"
+		"@carlossalasamper/eslint-config": "^0.1.4",
+		"@commitlint/config-conventional": "^18.4.3",
+		"@wordpress/scripts": "^26.19.0",
+		"archiver": "^6.0.1",
+		"commitlint": "^18.4.3",
+		"husky": "^8.0.3"
 	}
 }
