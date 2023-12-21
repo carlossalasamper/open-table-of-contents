@@ -55,6 +55,4 @@ npm run zip
 
 ## License
 
-The Open Table of Contents source code is made available under the [MIT license](./LICENSE).
-
-Some of the dependencies are licensed differently, with the BSD license, for example.
+The Open Table of Contents source code is made available under the [GPLv3](./LICENSE).

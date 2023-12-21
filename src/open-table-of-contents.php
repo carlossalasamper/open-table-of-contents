@@ -6,8 +6,8 @@
  * Requires PHP:      7.0
  * Version:           0.1.0
  * Author:            Carlos Sala Samper
- * License:           MIT
- * License URI:       https://opensource.org/license/mit/
+ * License:           GPL v3 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       open-table-of-contents
  * 
  * @package           open-table-of-contents
