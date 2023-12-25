@@ -1,9 +1,17 @@
 # Open Table of Contents
 
 <p align="center">
-<img src="./assets/images/open-table-of-contents-banner.png?raw=true" style="max-width: 100%; width: 600px;" />
+<img src="./assets/banner-772x250.png?raw=true" style="max-width: 100%; width: 600px;" />
 </p>
 <p align="center" style="margin-top: 10px;">🗂️ The open source WordPress plugin to insert Table of Contents into your posts and pages.</p>
+
+# Features
+
+- Table of contents block to insert in posts/pages compatible with the Wordpress Gutenberg editor.
+- The style of the table of contents is fully customizable through CSS.
+- Choose a title for the table of contents.
+- Choose which levels of headings you want to include in the table of contents from h2 to h6.
+- SEO friendly solution rendered on PHP server. The table of contents does not execute ANY JAVASCRIPT CODE.
 
 ## Scripts
 
@@ -55,4 +63,4 @@ npm run zip
 
 ## License
 
-The Open Table of Contents source code is made available under the [GPLv3](./LICENSE).
+The Open Table of Contents source code is made available under the [GPL-3.0](./LICENSE).
