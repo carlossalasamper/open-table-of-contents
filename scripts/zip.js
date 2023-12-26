@@ -18,6 +18,7 @@ const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "temp-"));
 execSync(`cp -r ${path.join(pluginPath, "build")}/* ${tempDir}`);
 execSync(`cp -r ${path.join(pluginPath, "src", "includes")} ${tempDir}`);
 execSync(`cp ${path.join(pluginPath, "src", `${packageName}.php`)} ${tempDir}`);
+execSync(`cp ${path.join(pluginPath, "readme.txt")} ${tempDir}`);
 
 // Create output directory if it doesn't exist
 if (!fs.existsSync(outputDir)) {
