@@ -37,7 +37,7 @@ function get_headings_array($minHeadingLevel, $maxHeadingLevel) {
         $headingsOfType = $xpath->query($query);
 
         foreach ($headingsOfType as $heading) {
-            $headingText = $heading->nodeValue;
+            $headingText = utf8_decode($heading->textContent);
             $headingLevel = (int)substr($heading->tagName, 1);
 
             $headings[] = array(
@@ -115,7 +115,8 @@ function add_id_to_headings($content) {
     if (has_table_of_contents_block($content)) {
         // Load the HTML content into a DOMDocument
         $dom = new DOMDocument();
-        @$dom->loadHTML($content); // Use @ to suppress warnings about malformed HTML
+        @$dom->loadHTML(utf8_decode($content)); // Use @ to suppress warnings about malformed HTML
+        $dom->encoding = 'utf-8';
 
         // Create a DOMXPath instance to query the document
         $xpath = new DOMXPath($dom);
