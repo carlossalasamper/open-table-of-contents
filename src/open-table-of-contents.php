@@ -9,6 +9,7 @@
  * License:           GPL v3 or later
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       open-table-of-contents
+ * Domain Path:       /languages
  * 
  * @package           open-table-of-contents
  */
@@ -21,6 +22,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Defines the root directory of the plugin.
  */
 define('OPEN_TABLE_OF_CONTENTS_ROOT', __DIR__);
+
+/**
+ * Defines the block ID.
+ */
+define('OPEN_TABLE_OF_CONTENTS_BLOCK_ID', 'b3b3cf7b-6b52-4e1e-a5a8-150635d589ff');
 
 /**
  * Registers the block using the metadata loaded from the `block.json` file.

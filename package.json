@@ -11,7 +11,7 @@
 		"lint:js": "wp-scripts lint-js --fix",
 		"packages-update": "wp-scripts packages-update",
 		"start": "wp-scripts start",
-		"zip": "node ./scripts/zip.js"
+		"zip": "npm run build && node ./scripts/zip.js"
 	},
 	"devDependencies": {
 		"@carlossalasamper/eslint-config": "^0.1.4",

@@ -10,7 +10,7 @@ License URI:       https://www.gnu.org/licenses/gpl-3.0.html
 
 == Description ==
 
-🗂️ The open source WordPress plugin to insert Table of Contents into your posts and pages.
+The definitive WordPress plugin to automatically add a table of contents to your posts and pages.
 
 Enjoy all the features of the plugin completely free. No subscription or pro license will be required now or in the future.
 
@@ -21,6 +21,7 @@ Enjoy all the features of the plugin completely free. No subscription or pro lic
 - Choose a title for the table of contents.
 - Choose which levels of headings you want to include in the table of contents from h2 to h6.
 - SEO friendly solution rendered on PHP server. The table of contents does not execute ANY JAVASCRIPT CODE.
+- It is open source, so you can see how the code works or extend its features.
 
 == Installation ==
 

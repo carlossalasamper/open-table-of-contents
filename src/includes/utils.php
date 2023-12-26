@@ -1,4 +1,14 @@
 <?php
+
+/**
+ *  Sanitizes a text so it can be used as an HTML ID.
+ *
+ * @return string sanitized text.
+ */
+function sanitize_text($text) {
+    return sanitize_title($text);
+}
+
 /**
  * Gets all the headings of a post and returns an array of them.
  *
@@ -86,7 +96,7 @@ function render_headings($headings) {
 
     foreach ($headings as $heading) {
         echo '<li>';
-        echo '<a href="#' . sanitize_title($heading['text']) . '">' . $heading['text'] . '</a>';
+        echo '<a href="#' . sanitize_text($heading['text']) . '">' . $heading['text'] . '</a>';
 
         if (!empty($heading['children'])) {
             render_headings($heading['children']);
@@ -96,5 +106,66 @@ function render_headings($headings) {
     }
 
     echo '</ul>';
+}
+
+
+function add_id_to_headings($content) {
+    $modifiedContent = $content;
+
+    if (has_table_of_contents_block($content)) {
+        // Load the HTML content into a DOMDocument
+        $dom = new DOMDocument();
+        @$dom->loadHTML($content); // Use @ to suppress warnings about malformed HTML
+
+        // Create a DOMXPath instance to query the document
+        $xpath = new DOMXPath($dom);
+
+        // Query all heading elements (h1, h2, h3, etc.)
+        $headings = $xpath->query('//h1|//h2|//h3|//h4|//h5|//h6');
+
+        $headingCounter = array();
+
+        foreach ($headings as $heading) {
+            // Get the text content of the heading
+            $headingText = $heading->textContent;
+
+            // Prepare a sanitized version of the heading text for use as an ID
+            $headingId = sanitize_text($headingText);
+
+            // Check if the ID is already taken, and if so, append a number
+            $counter = isset($headingCounter[$headingId]) ? ++$headingCounter[$headingId] : 1;
+            $uniqueHeadingId = $counter > 1 ? "{$headingId}-{$counter}" : $headingId;
+
+            // Set the ID attribute of the heading element
+            $heading->setAttribute('id', $uniqueHeadingId);
+
+            // Update the heading ID counter
+            $headingCounter[$headingId] = $counter;
+        }
+
+        // Save the modified HTML content
+        $modifiedContent = $dom->saveHTML();
+    }
+
+    return $modifiedContent;
+}
+add_filter('the_content', 'add_id_to_headings');
+
+function has_table_of_contents_block($content) {
+    // Load the HTML content into a DOMDocument
+    $dom = new DOMDocument();
+    @$dom->loadHTML($content); // Use @ to suppress warnings about malformed HTML
+
+    // Create a DOMXPath instance to query the document
+    $xpath = new DOMXPath($dom);
+
+    // Define the XPath query for the custom block
+    $query = '//div[@data-id="' . OPEN_TABLE_OF_CONTENTS_BLOCK_ID .  '"]';
+
+    // Perform the query
+    $result = $xpath->query($query);
+
+    // Check if any matching elements were found
+    return $result->length > 0;
 }
 ?>
