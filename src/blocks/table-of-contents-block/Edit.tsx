@@ -1,8 +1,8 @@
 import { useBlockProps } from "@wordpress/block-editor";
 import { BlockEditProps } from "@wordpress/blocks";
-import { TextControl } from "@wordpress/components";
+import { TextControl, SelectControl } from "@wordpress/components";
 import "./editor.scss";
-import { TableOfContentsBlockAttributes } from "./types";
+import { ListStyle, TableOfContentsBlockAttributes } from "./types";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -19,7 +19,12 @@ export default function Edit({
 	const MIN_HEADING_LEVEL = 2;
 	const MAX_HEADING_LEVEL = 6;
 	const props = useBlockProps();
-	const { minHeadingLevel, maxHeadingLevel, title } = attributes;
+	const { minHeadingLevel, maxHeadingLevel, title, listStyle } = attributes;
+	const listStyleOptions = Object.values(ListStyle).map((style) => ({
+		label: style,
+		value: style,
+		disabled: style === listStyle,
+	}));
 	const onMinHeadingLevelChanged = (minHeadingLevel: string) => {
 		const level = minHeadingLevel
 			? parseInt(minHeadingLevel)
@@ -47,6 +52,9 @@ export default function Edit({
 	const onTitleChanged = (title: string) => {
 		setAttributes({ title });
 	};
+	const onListStyleChanged = (listStyle: ListStyle) => {
+		setAttributes({ listStyle });
+	};
 
 	return (
 		<div {...props}>
@@ -64,6 +72,12 @@ export default function Edit({
 				type="number"
 				value={maxHeadingLevel}
 				onChange={onMaxHeadingLevelChanged}
+			/>
+			<SelectControl
+				label="List Style"
+				options={listStyleOptions}
+				value={listStyle}
+				onChange={onListStyleChanged}
 			/>
 		</div>
 	);

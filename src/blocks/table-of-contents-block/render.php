@@ -2,7 +2,11 @@
     require_once(OPEN_TABLE_OF_CONTENTS_ROOT . '/includes/utils.php');
 ?>
 
-<div <?php echo get_block_wrapper_attributes(); ?> data-id="<?php echo OPEN_TABLE_OF_CONTENTS_BLOCK_ID; ?>">
+<div
+    <?php echo get_block_wrapper_attributes(); ?>
+    data-id="<?php echo OPEN_TABLE_OF_CONTENTS_BLOCK_ID; ?>"
+    data-list-style="<?php echo $attributes['listStyle']; ?>"
+>
     <?php
     $headingsTree = get_headings_tree($attributes['minHeadingLevel'], $attributes['maxHeadingLevel']);
 
