@@ -60,26 +60,27 @@ function get_headings_array($minHeadingLevel, $maxHeadingLevel) {
  */
 function get_headings_tree($minHeadingLevel, $maxHeadingLevel) {
     $headings = get_headings_array($minHeadingLevel, $maxHeadingLevel);
-    $tree = array();
+    $processedHeadings = array();
 
-    foreach ($headings as $heading) {
-        $level = $heading['level'];
-        $item = array('text' => $heading['text'], 'children' => array());
+    // Helper function to recursively build the tree
+    $build_tree = function($headings, $minLevel, $maxLevel, &$processedHeadings) use (&$build_tree) {
+        $tree = array();
 
-        if ($level === $minHeadingLevel) {
-            $tree[] = $item;
-        } else {
-            $parent = &$tree;
+        foreach ($headings as $heading) {
+            if ($heading['level'] === $minLevel && !in_array($heading, $processedHeadings, true)) {
+                $processedHeadings[] = $heading; // Mark heading as processed
 
-            for ($i = $minHeadingLevel + 1; $i <= $level; $i++) {
-                $parent = &$parent[count($parent) - 1];
+                $item = array('text' => $heading['text'], 'children' => array());
+                $item['children'] = $build_tree($headings, $minLevel + 1, $maxLevel, $processedHeadings);
+                $tree[] = $item;
             }
-
-            $parent['children'][] = $item;
         }
-    }
 
-    return $tree;
+        return $tree;
+    };
+
+    // Start building the tree from the minimum heading level
+    return $build_tree($headings, $minHeadingLevel, $maxHeadingLevel, $processedHeadings);
 }
 
 /**
