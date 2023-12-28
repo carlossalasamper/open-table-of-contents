@@ -58,7 +58,7 @@ export default function Edit({
 
 	return (
 		<div {...props}>
-			<p>Open Table of Contents / Table of Contents</p>
+			<p className="title">Open Table of Contents / Table of Contents</p>
 
 			<TextControl label="Title" value={title} onChange={onTitleChanged} />
 			<TextControl
