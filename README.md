@@ -13,6 +13,17 @@
 - Choose which levels of headings you want to include in the table of contents from h2 to h6.
 - SEO friendly solution rendered on PHP server. The table of contents does not execute ANY JAVASCRIPT CODE.
 
+## Changelog
+
+### 0.1.1
+
+- Added list style attribute to table of contents block.
+- Fixed heading tree generation.
+
+### 0.1.0
+
+- Release
+
 ## Scripts
 
 ```bash
