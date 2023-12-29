@@ -6,4 +6,14 @@
 
 .wp-block-open-table-of-contents-table-of-contents {
 	border: 1px solid #ddd;
+	padding: 8px;
+
+	.title {
+		text-align: center;
+	}
+
+	label {
+		font-size: 15px !important;
+		color: white;
+	}
 }

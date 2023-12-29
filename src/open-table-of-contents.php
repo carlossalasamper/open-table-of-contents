@@ -4,7 +4,7 @@
  * Description:       🗂️ The open source WordPress plugin to insert Table of Contents into your posts and pages.
  * Requires at least: 6.1
  * Requires PHP:      7.0
- * Version:           0.1.0
+ * Version:           0.1.1
  * Author:            Carlos Sala Samper
  * License:           GPL v3 or later
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html

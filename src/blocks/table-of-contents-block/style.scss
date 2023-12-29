@@ -10,4 +10,64 @@
 		font-size: 2rem;
 		margin-bottom: 0;
 	}
+
+	&[data-list-style="none"] {
+		ul {
+			list-style: none;
+		}
+	}
+
+	&[data-list-style="decimal"] {
+		ul {
+			list-style: decimal;
+		}
+	}
+
+	&[data-list-style="decimal-leading-zero"] {
+		ul {
+			list-style: decimal-leading-zero;
+		}
+	}
+
+	&[data-list-style="lower-roman"] {
+		ul {
+			list-style: lower-roman;
+		}
+	}
+
+	&[data-list-style="upper-roman"] {
+		ul {
+			list-style: upper-roman;
+		}
+	}
+
+	&[data-list-style="lower-alpha"] {
+		ul {
+			list-style: lower-alpha;
+		}
+	}
+
+	&[data-list-style="upper-alpha"] {
+		ul {
+			list-style: upper-alpha;
+		}
+	}
+
+	&[data-list-style="circle"] {
+		ul {
+			list-style: circle;
+		}
+	}
+
+	&[data-list-style="disc"] {
+		ul {
+			list-style: disc;
+		}
+	}
+
+	&[data-list-style="square"] {
+		ul {
+			list-style: square;
+		}
+	}
 }

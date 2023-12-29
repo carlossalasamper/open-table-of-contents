@@ -60,27 +60,31 @@ function get_headings_array($minHeadingLevel, $maxHeadingLevel) {
  */
 function get_headings_tree($minHeadingLevel, $maxHeadingLevel) {
     $headings = get_headings_array($minHeadingLevel, $maxHeadingLevel);
-    $processedHeadings = array();
+    $tree = array();
+    $treeContext = array();
 
-    // Helper function to recursively build the tree
-    $build_tree = function($headings, $minLevel, $maxLevel, &$processedHeadings) use (&$build_tree) {
-        $tree = array();
+    foreach ($headings as $heading) {
+        $headingLevel = $heading['level'];
+        $headingText = $heading['text'];
 
-        foreach ($headings as $heading) {
-            if ($heading['level'] === $minLevel && !in_array($heading, $processedHeadings, true)) {
-                $processedHeadings[] = $heading; // Mark heading as processed
+        if ($headingLevel === $minHeadingLevel) {
+            $tree[] = $heading;
+            $treeContext = array($headingLevel => &$tree[count($tree) - 1]);
+        } else {
+            $parentHeadingLevel = $headingLevel - 1;
+            $parentHeading = &$treeContext[$parentHeadingLevel];
 
-                $item = array('text' => $heading['text'], 'children' => array());
-                $item['children'] = $build_tree($headings, $minLevel + 1, $maxLevel, $processedHeadings);
-                $tree[] = $item;
+            if ($parentHeading) {
+                $parentHeading['children'][] = $heading;
+                $treeContext[$headingLevel] = &$parentHeading['children'][count($parentHeading['children']) - 1];
+                $treeContext = array_filter($treeContext, function ($index) use ($headingLevel) {
+                    return is_numeric($index) && $index <= $headingLevel;
+                }, ARRAY_FILTER_USE_KEY);
             }
         }
+    }
 
-        return $tree;
-    };
-
-    // Start building the tree from the minimum heading level
-    return $build_tree($headings, $minHeadingLevel, $maxHeadingLevel, $processedHeadings);
+    return $tree;
 }
 
 /**
