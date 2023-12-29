@@ -17,9 +17,10 @@ Enjoy all the features of the plugin completely free. No subscription or pro lic
 == Features ==
 
 - Table of contents block to insert in posts/pages compatible with the Wordpress Gutenberg editor.
-- The style of the table of contents is fully customizable through CSS.
 - Choose a title for the table of contents.
 - Choose which levels of headings you want to include in the table of contents from h2 to h6.
+- Choose a list style for your table of contents.
+- The style of the table of contents is fully customizable through CSS.
 - SEO friendly solution rendered on PHP server. The table of contents does not execute ANY JAVASCRIPT CODE.
 - It is open source, so you can see how the code works or extend its features.
 
@@ -32,6 +33,7 @@ Enjoy all the features of the plugin completely free. No subscription or pro lic
 
 = 0.1.1 =
 * Added list style attribute to table of contents block.
+* Fixed heading tree generation.
 
 = 0.1.0 =
 * Release
