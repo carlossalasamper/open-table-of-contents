@@ -17,6 +17,10 @@
 
 ## Changelog
 
+### 0.1.2
+
+- Fixed utf-8 codification issue with some characters in post content.
+
 ### 0.1.1
 
 - Added list style attribute to table of contents block.

@@ -21,10 +21,10 @@ function get_headings_array($minHeadingLevel, $maxHeadingLevel) {
     $headings = array();
 
     if (!empty($post_content)) {
-        $dom = new DOMDocument;
+        $dom = new DOMDocument('1.0', 'UTF-8');
 
         libxml_use_internal_errors(true);
-        $dom->loadHTML($post_content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $dom->loadHTML(mb_convert_encoding($post_content, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
         libxml_use_internal_errors(false);
 
         $xpath = new DOMXPath($dom);
@@ -37,7 +37,7 @@ function get_headings_array($minHeadingLevel, $maxHeadingLevel) {
         $headingsOfType = $xpath->query($query);
 
         foreach ($headingsOfType as $heading) {
-            $headingText = utf8_decode($heading->textContent);
+            $headingText = $heading->textContent;
             $headingLevel = (int)substr($heading->tagName, 1);
 
             $headings[] = array(
@@ -119,8 +119,8 @@ function add_id_to_headings($content) {
 
     if (has_table_of_contents_block($content)) {
         // Load the HTML content into a DOMDocument
-        $dom = new DOMDocument();
-        @$dom->loadHTML(utf8_decode($content)); // Use @ to suppress warnings about malformed HTML
+        $dom = new DOMDocument('1.0', 'UTF-8');
+        @$dom->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8')); // Use @ to suppress warnings about malformed HTML
         $dom->encoding = 'utf-8';
 
         // Create a DOMXPath instance to query the document
@@ -159,7 +159,7 @@ add_filter('the_content', 'add_id_to_headings');
 
 function has_table_of_contents_block($content) {
     // Load the HTML content into a DOMDocument
-    $dom = new DOMDocument();
+    $dom = new DOMDocument('1.0', 'UTF-8');
     @$dom->loadHTML($content); // Use @ to suppress warnings about malformed HTML
 
     // Create a DOMXPath instance to query the document

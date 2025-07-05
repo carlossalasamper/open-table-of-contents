@@ -2,7 +2,7 @@
 Contributors:      Carlos Sala Samper
 Tags:              table of contents, toc, indexes, seo, navigation, links, index
 Tested up to:      6.1
-Stable tag:        0.1.1
+Stable tag:        0.1.2
 License:           GPL v3 or later
 License URI:       https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -30,6 +30,9 @@ Enjoy all the features of the plugin completely free. No subscription or pro lic
 1. Activate the plugin through the 'Plugins' screen in WordPress.
 
 == Changelog ==
+
+= 0.1.2 =
+* Fixed utf-8 codification issue with some characters in post content.
 
 = 0.1.1 =
 * Added list style attribute to table of contents block.
